@@ -6,11 +6,13 @@
 </p>
 
 <h1>Tasks</h1>
-<ul>
+<ul class="list-group">
 <% @todo_list.tasks.each do |task| %>
-  <li><%= task.description %></li>
+  <li class="list-group-item"><%= task.description %></li>
 <% end %>
 </ul>
+
+<br/>
 
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
 <%= link_to 'Back', todo_lists_path %>

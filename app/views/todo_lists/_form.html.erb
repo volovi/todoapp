@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: 'Name', class: 'form-control' %>
   </div>
 
   <h1>Tasks</h1>
@@ -28,14 +28,12 @@
       <%= render 'task_fields', form: task %>
     <% end %>
 
-    <div data-nested-form-target='add_task'>
-      <%= link_to "Add Task", "#", data: { action: 'click->nested-form#add_association'} %>
+    <div data-nested-form-target='add_task'></div><br/>
+
+    <div class="actions">
+      <%= form.submit :class => "btn btn-success" %>
+      <button class="btn btn-danger" data-action="click->nested-form#add_association">Add another task</button>
     </div>
   </div>
 
-  <br/>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
